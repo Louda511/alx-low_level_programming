@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -S $CFILE -o "`echo ${CFILE} | sed -e 's/c/s/g'`"
