@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-/**/
+/**
+ * main - prints program name
+ * @argc: int
+ * @argv: array of strings
+ * return: 0
+ */
 
 int main(int argc, char* argv[])
 {
