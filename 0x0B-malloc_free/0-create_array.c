@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * *create_array - allocates memory for an array of chars
