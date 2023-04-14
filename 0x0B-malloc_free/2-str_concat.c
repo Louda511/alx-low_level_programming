@@ -24,7 +24,7 @@ int _strlen(char *str)
 	return (size);
 }
 
-char *_str_concat(char *str1, char *str2)
+char *str_concat(char *str1, char *str2)
 {
 	int size1 = _strlen(str1);
 	int size2 = _strlen(str2);
