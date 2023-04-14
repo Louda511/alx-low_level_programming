@@ -10,10 +10,11 @@
 
 int _strlen(char *str)
 {	
+	int size = 0;
+
 	if(str == NULL)
 		return (0);
 
-	int size = 0;
 	char *c;
 
 	for (c = str; *c; c++)
