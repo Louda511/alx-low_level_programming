@@ -13,6 +13,9 @@ char *_strdup(char *str)
 	int size = 0;
 	char *s;
 
+	if (str == NULL)
+		return (NULL);
+
 	for (c = str; *c; c++)
 	{
 		size++;
