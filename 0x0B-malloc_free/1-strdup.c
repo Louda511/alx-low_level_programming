@@ -1,7 +1,7 @@
 #include "main.h"
 
 /*
- * _strdup - creates a dulplicate of its argument
+ * *_strdup - creates a dulplicate of its argument
  * @str: the string to be dulpicated
  *
  * Return: Null or pointer to string
@@ -9,10 +9,15 @@
 
 char *_strdup(char *str)
 {
-	int size = sizeof(str);
-	char *s = malloc(size);
+	char *c;
+	int size = 0;
 
-	if (sizeof(s) == 0 || sizeof(s) != sizeof(str))
+	for (c = str; *c; c++)
+	{
+		size++;
+	}
+
+	if (s == 0)
 		return (NULL);
 
 	while (size--)
