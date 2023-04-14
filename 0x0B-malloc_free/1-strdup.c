@@ -11,6 +11,7 @@ char *_strdup(char *str)
 {
 	char *c;
 	int size = 0;
+	char *s;
 
 	for (c = str; *c; c++)
 	{
