@@ -1,7 +1,7 @@
 #include "main.h"
 
-/*
- * _strdup - creates a dulplicate of its argument
+/**
+ * *_strdup - creates a dulplicate string
  * @str: the string to be dulpicated
  *
  * Return: Null or pointer to string
@@ -20,7 +20,7 @@ char *_strdup(char *str)
 
 	s = malloc(size + 1);
 
-	if (s == NULL)
+	if (s == NULL || str == NULL)
 		return (NULL);
 
 	while (size--)
