@@ -4,7 +4,7 @@
 
 /**
  * free_dog - frees memory dynamically allocated to dog
- * @d - pointer to struct
+ * @d: pointer to struct
  *
  * Return: nothing
  */
