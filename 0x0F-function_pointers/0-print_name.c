@@ -7,11 +7,12 @@
  * @name: name of the user
  * @f: the printing function pointer
  *
- * Return: nothing
+ * Return: void
  */
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name && f)
+		f(name);
 
 }
