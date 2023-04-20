@@ -13,6 +13,8 @@ void print_all(const char * const format, ...)
 	char c;
 	int i = 0;
 	char* separator = ", ";
+	char *nil;
+
 
 	if(format !=NULL)
 	{	
@@ -28,7 +30,10 @@ void print_all(const char * const format, ...)
 			switch (c)
 			{
 				case 's':
-					printf("%s%s",va_arg(args, char*), separator);
+					nil =  va_arg(args, char*);
+					if(!nil)
+						nil = "(nil)";
+					printf("%s%s",nil, separator);
 					break;
 
 				case 'i':
@@ -38,12 +43,13 @@ void print_all(const char * const format, ...)
                                          printf("%f%s", va_arg(args, double), separator);
                                         break;
 				case 'c':
-                                         printf("%c%s", va_arg(args, int), separator);
+                                        printf("%c%s", va_arg(args, int), separator);
                                         break;
 			}
 			i++;
 		}
 		
 	}
-	                printf("\n");
+	else 
+     		printf("\n");
 }
