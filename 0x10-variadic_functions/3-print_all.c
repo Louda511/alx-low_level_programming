@@ -13,7 +13,6 @@ void print_all(const char * const format, ...)
 	char c;
 	int i = 0;
 	char* separator = ", ";
-	char *nil;
 
 
 	if(format !=NULL)
@@ -30,8 +29,7 @@ void print_all(const char * const format, ...)
 			switch (c)
 			{
 				case 's':
-					nil =  va_arg(args, char*);
-					printf("%s%s",nil, separator);
+					printf("%s%s",va_arg(args, char *), separator);
 					break;
 
 				case 'i':
