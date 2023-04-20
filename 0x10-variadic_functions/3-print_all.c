@@ -12,8 +12,7 @@ void print_all(const char * const format, ...)
 {
 	char c;
 	int i = 0;
-	char* separator = ", ";
-
+        char*	separator = ", ";
 
 	if(format !=NULL)
 	{	
@@ -29,8 +28,8 @@ void print_all(const char * const format, ...)
 			switch (c)
 			{
 				case 's':
-					printf("%s%s",va_arg(args, char *), separator);
-					break;
+                                         printf("%s%s", va_arg(args, char*), separator);
+                                        break;
 
 				case 'i':
 					 printf("%d%s", va_arg(args, int), separator);
@@ -46,6 +45,5 @@ void print_all(const char * const format, ...)
 		}
 		
 	}
-	else 
-     		printf("\n");
+	
 }
