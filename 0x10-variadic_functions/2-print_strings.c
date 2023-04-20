@@ -24,9 +24,17 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		while (--i)
 		{
 			st = va_arg(args, char*);
+
+			if (st == NULL)
+				st = "(nil)";
+
 			printf("%s%s", st, separator);
 		}
 		st = va_arg(args, char*);
+
+		if (st == NULL)
+			st = "(nil)";
+
 		va_end(args);
 		printf("%s\n", st);
 	}
