@@ -13,7 +13,6 @@ void print_all(const char * const format, ...)
 	char c;
 	int i = 0;
         char*	separator = ", ";
-	char* nill;
 	if(format !=NULL)
 	{	
 		va_list args;
@@ -28,12 +27,8 @@ void print_all(const char * const format, ...)
 			switch (c)
 			{
 				case 's':
-					nill = va_arg(args, char*);
-						if (nill == NULL)
-							nill = "(nill)";
-                                         printf("%s%s",nill, separator);
+                                         printf("%s%s",va_arg(args, char*), separator);
                                         break;
-
 				case 'i':
 					 printf("%d%s", va_arg(args, int), separator);
                                         break;
