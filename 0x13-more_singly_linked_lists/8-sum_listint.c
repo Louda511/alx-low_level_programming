@@ -2,7 +2,7 @@
 
 /**
  * sum_listint - prints all elements in a list
- * @h: pointer to first node
+ * @head: pointer to first node
  *
  * Return: number of nodes
  *
