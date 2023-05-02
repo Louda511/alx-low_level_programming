@@ -2,7 +2,7 @@
 
 /**
  * free_listint - free the nodes of linked list
- * @head - pointer to the first node
+ * @head: pointer to the first node
  *
  * Return: nothing
  *
