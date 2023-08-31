@@ -51,7 +51,6 @@ unsigned int binary_to_uint(const char *b)
 		{
 			if(*j != '0' && *j !=  '1')
 			{
-				printf("%c\n",*j);
 				return 0;
 			}
 			
