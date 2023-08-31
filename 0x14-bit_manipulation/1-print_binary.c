@@ -10,27 +10,24 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int d, result;
-	int flag;
+	int i, bit, flag = 0;
 
-	flag = 0;
-	d = (1 << 30);
-	d *= 2;
-
-	while (d != 0)
+	for (i = 31; i >= 0; i--)
 	{
-		result = (n & d);
-		/* printf("%lu\n", result); */
-		if (result == d)
+		bit = ((n & (1 << i)) >> i);
+		
+		if (bit == 1)
 		{
 			flag = 1;
-			_putchar('1');
-
 		}
-		else if (flag == 1 || d == 1)
-		{
-			_putchar('0');
-		}
-		d >>= 1;
+		if (flag)
+			_putchar(bit+48);
+	}
+	if (!flag)
+	{
+		_putchar('0');
 	}
 }
+
+
+			
