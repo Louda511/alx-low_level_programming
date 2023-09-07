@@ -22,10 +22,16 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content == NULL)
+	{
+		fclose(fp);
 		return (1);
+	}
 	r = fwrite(filename, 1, sizeof(filename), fp);
 
+	fclose(fp);
+
 	if (r)
+
 		return (1);
 	else
 		return (-1);
