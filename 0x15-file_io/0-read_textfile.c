@@ -27,10 +27,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		c = fgetc(f);
 		if (feof(f))
-			return(i);
+			return (i);
 		p = _putchar(c);
 		if (p < 0)
-                        return (0);
+			return (0);
 		i++;
 
 	}
