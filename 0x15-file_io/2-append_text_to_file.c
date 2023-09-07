@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string>
+#include <string.h>
 
 /**
  * append_text_to_file - appends text to and existing file
@@ -17,7 +17,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	fp = fopen(filename, "r+");
+	fp = fopen(filename, "a");
 
 	if (fp == NULL)
 		return (-1);
@@ -28,7 +28,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	res = fwrite(filename, 1, strlen(text_count), fp);
+	res = fprintf(fp, "%s", text_content);
 
 	fclose(fp);
 
