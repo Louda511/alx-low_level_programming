@@ -32,11 +32,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		i++;
 
 	}
-	while (!feof(f))
+	while (1)
 	{
+		fgetc(f);
+		if (feof(f))
+			break;
 		i++;
 	}
 
+	fclose(f);
 	return (i);
 
 
