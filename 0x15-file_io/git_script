@@ -1,8 +1,10 @@
 #!/bin/bash
-echo enter commit_message
-read msg
+echo enter file
+read file
+echo enter commit message
+read message 
 
-git add .
+git add . "$file"
 git commit -m "$msg"
 git push
 

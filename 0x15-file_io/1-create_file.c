@@ -13,6 +13,7 @@ int create_file(const char *filename, char *text_content)
 {
 	FILE *fp;
 	size_t r;
+	int cl;
 
 	if (filename == NULL)
 		return (-1);
@@ -29,9 +30,9 @@ int create_file(const char *filename, char *text_content)
 	}
 	r = fprintf(fp, "%s", text_content);
 
-	fclose(fp);
+	cl = fclose(fp);
 
-	if (r)
+	if (r && cl != EOF)
 
 		return (1);
 	else
