@@ -50,12 +50,12 @@ int main(int ac, char **av)
 			 exit(99);
 		}
 	}
-		if (fclose(ffrom))
+		if (fclose(ffrom) == EOF)
 		{
 			printf("Error: Can't close fd %d\n", fileno(ffrom));
 			exit(100);
 		}
-		if (fclose(fto))
+		if (fclose(fto) == EOF)
 		{
 			printf("Error: Can't close fd %d\n", fileno(fto));
 			exit(100);
