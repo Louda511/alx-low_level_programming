@@ -57,7 +57,7 @@ int main(int ac, char **av)
 		}
 		if (fclose(fto))
 		{
-			printf("Error: Can't close fd %d\n", fileno(ffrom));
+			printf("Error: Can't close fd %d\n", fileno(fto));
 			exit(100);
 		}
 	
