@@ -40,7 +40,10 @@ int main(int ac, char **av)
 			printf("Error: Can't read from %s\n", av[1]);
 			exit(98);
 		}
+		if (!feof(ffrom))
+		{
 		write = fputc(c, fto);
+		}
 		if (!write)
 		{
 			 printf("Error: Can't write to %s\n", av[2]);
