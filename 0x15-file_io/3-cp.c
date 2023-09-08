@@ -18,6 +18,17 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
+	if (av[1] == NULL)
+        {
+		printf("Error: Can't read from %s\n", av[1]);
+		exit(98);
+	}
+	if (av[2] == NULL)
+	{
+		printf("Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}	
+		
 	ffrom = fopen(av[1], "r");
 	fto = fopen(av[2], "w");
 
