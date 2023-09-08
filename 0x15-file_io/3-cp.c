@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * main - where all the fun happens
@@ -8,7 +8,7 @@
 
 int main(int ac, char **av)
 {
-	size_t read, write;
+	int write;
 	FILE *fto, *ffrom;
 	char c;
 
@@ -35,8 +35,28 @@ int main(int ac, char **av)
 	while (!feof(ffrom))
 	{
 		c = fgetc(ffrom);
-		write = fputc
+		if (!c)
+		{
+			printf("Error: Can't read from %s\n", av[1]);
+			exit(98);
+		}
+		write = fputc(c, fto);
+		if (!write)
+		{
+			 printf("Error: Can't write to %s\n", av[2]);
+			 exit(99);
+		}
+	}
+		if (fclose(ffrom))
+		{
+			printf("Error: Can't close fd %d", fileno(ffrom));
+			exit(100);
+		}
+		if (fclose(fto))
+		{
+			printf("Error: Can't close fd %d", fileno(ffrom));
+			exit(100);
+		}
 	
-
-
+	return (0);
 }
