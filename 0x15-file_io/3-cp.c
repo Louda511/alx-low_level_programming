@@ -35,16 +35,11 @@ int main(int ac, char **av)
 	while (!feof(ffrom))
 	{
 		c = fgetc(ffrom);
-		if (!c)
-		{
-			printf("Error: Can't read from %s\n", av[1]);
-			exit(98);
-		}
-		if (!feof(ffrom))
+		if (c != EOF)
 		{
 		write = fputc(c, fto);
 		}
-		if (!write)
+		if (write == EOF)
 		{
 			 printf("Error: Can't write to %s\n", av[2]);
 			 exit(99);
