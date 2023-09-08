@@ -25,8 +25,11 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
-		fclose(fp);
-		return (1);
+		cl = fclose(fp);
+		if (cl != EOF)
+			return (1);
+		else
+			return (-1);
 	}
 	r = fprintf(fp, "%s", text_content);
 
